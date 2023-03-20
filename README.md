@@ -19,7 +19,7 @@
 git clone https://github.com/josh-thales/virtual-ome
 ```
 
-2. Create `.env` file in root of folder with following contents:
+2. Create `.env` file in root of folder with following contents (fill out appropriate fields):
 
 ```
 HOST=
