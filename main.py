@@ -1,5 +1,6 @@
 from datetime import datetime, timezone
 from mqttInterface import startPublishing
+from omes import omes
 
 
 def zuluTime():
@@ -18,15 +19,13 @@ def generateDataTest():
     }
 
 
-publishingData = [
-    ("IW/Thales-1/NDATA/TEST", generateDataTest),
-    ("IW/Thales-1/NDATA/TEST2", generateDataTest),
-]
+publishingData = [*omes]
 interval = 10
 
-print('\nStarting Emulation for topics:')
+
+print("\nStarting Emulation for topics:")
 for publishData in publishingData:
-    print(f'\t- {publishData[0]}')
-print(f'Every {interval} seconds\n')
+    print(f"\t- {publishData[0]}")
+print(f"Every {interval} seconds\n")
 
 startPublishing(publishingData, interval)
