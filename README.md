@@ -1,8 +1,8 @@
-# Publish to multiple topics at a set interval
+# emulate-ome-mqtt
+
+Handles publishing to multiple MQTT topics with dynamic payloads at set intervals
 
 
-
-- [Publish to multiple topics at a set interval](#publish-to-multiple-topics-at-a-set-interval)
   - [Prerequsities](#prerequsities)
   - [Set up](#set-up)
   - [Start publishing](#start-publishing)
@@ -16,7 +16,7 @@
 ## Set up
 1. Clone repo
 ```
-git clone https://github.com/josh-thales/virtual-ome
+git clone https://github.com/josh-thales/emulate-ome-mqtt
 ```
 
 2. Create `.env` file in root of folder with following contents (fill out appropriate fields):
