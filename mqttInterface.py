@@ -20,7 +20,10 @@ def pub(topic, data):
 def startPublishing(publishingData, interval):
     while True:
         for publishData in publishingData:
-            pub(publishData[0], publishData[1]())
+            payload = publishData[1]()
+            pub(publishData[0], payload)
+            print(f'\n\nPublished to {publishData[0]} topic with payload:')
+            print(payload)
 
         time.sleep(interval)
 

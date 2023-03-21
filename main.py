@@ -24,4 +24,9 @@ publishingData = [
 ]
 interval = 10
 
+print('\nStarting Emulation for topics:')
+for publishData in publishingData:
+    print(f'\t- {publishData[0]}')
+print(f'Every {interval} seconds\n')
+
 startPublishing(publishingData, interval)
