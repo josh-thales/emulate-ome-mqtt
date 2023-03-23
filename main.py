@@ -20,7 +20,7 @@ def generateDataTest():
 
 
 publishingData = [*omes]
-interval = 10
+interval = 60
 
 
 print("\nStarting Emulation for topics:")

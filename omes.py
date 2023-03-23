@@ -756,7 +756,94 @@ def smartTool_TIGHTENINGDATA():
     }
 
 
-omes = [
+def cvx_STARTPROGRAM():
+    return {
+        "TagType": "DataTag",
+        "Name": "STARTPROGRAM",
+        "DataType": "Object",
+        "IOType": "InOut",
+        "Units": "",
+        "PublishedTimeStamp": zuluTime(),
+        "Parameters": {},
+        "Readings": [
+            {
+                "TimeStamp": zuluTime(),
+                "Value": {"ID": "0", "VISIONREFNUM": "1", "ACTIONLOGID": "0"},
+                "Quality": 1.0,
+            }
+        ],
+    }
+
+
+def cvx_PROGRAMRESULT():
+    return {
+        "TagType": "DataTag",
+        "Name": "OVERALLRESULT",
+        "DataType": "Object",
+        "IOType": "InOut",
+        "Units": "",
+        "PublishedTimeStamp": zuluTime(),
+        "Parameters": {},
+        "Readings": [
+            {
+                "TimeStamp": zuluTime(),
+                "Value": {"ID": "0", "CASEDATA": "1", "ACTIONLOGID": "0"},
+                "Quality": 1.0,
+            }
+        ],
+    }
+
+def tmx_STARTPROGRAM():
+    return {
+        "TagType": "DataTag",
+        "Name": "STARTPROGRAM",
+        "DataType": "Object",
+        "IOType": "InOut",
+        "Units": "",
+        "PublishedTimeStamp": zuluTime(),
+        "Parameters": {},
+        "Readings": [
+            {
+                "TimeStamp": zuluTime(),
+                "Value": {"ID": "0", "VISIONREFNUM": "1", "ACTIONLOGID": "0"},
+                "Quality": 1.0,
+            }
+        ],
+    }
+
+
+def _PROGRAMRESULT():
+    return {
+        "TagType": "DataTag",
+        "Name": "OVERALLRESULT",
+        "DataType": "Object",
+        "IOType": "InOut",
+        "Units": "",
+        "PublishedTimeStamp": zuluTime(),
+        "Parameters": {},
+        "Readings": [
+            {
+                "TimeStamp": zuluTime(),
+                "Value": {"ID": "0", "CASEDATA": "1", "ACTIONLOGID": "0"},
+                "Quality": 1.0,
+            }
+        ],
+    }
+
+
+commandAndControlTopics = [
+    ("IW/Mestec/NDATA/CVX/STARTPROGRAM", cvx_STARTPROGRAM),
+    ("IW/Mestec/NDATA/CVX/OVERALLRESULT", cvx_PROGRAMRESULT),
+    ("IW/Mestec/NDATA/TMX/STARTPROGRAM", tmx_STARTPROGRAM),
+    ("IW/Mestec/NDATA/TMX/STARTPROGRAM", tmx_STARTPROGRAM),
+]
+
+statusTopics = [
     ("IW/Thales-1/NDATA/B4750287_DATA/TIGHTENINGRESULT", smartTool_TIGHTENINGRESULT),
     ("IW/Thales-1/NDATA/B4750287_DATA/TIGHTENINGDATA", smartTool_TIGHTENINGDATA),
+]
+
+omes = [
+    *statusTopics
+    # *commandAndControlTopics
 ]
